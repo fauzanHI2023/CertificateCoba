@@ -12,16 +12,18 @@
 
     <header>
         <div class="heading_text">
-            <h1>Selamat! Pohon yang Kamu tanam telah bantu Selamatkan Bumi.</h1>
+            <h1>Selamat! Pohon yang Kamu tanam akan bantu Selamatkan Bumi.</h1>
             <h2>Abadikan Nama-mu dalam Gerakan Tanam Pohon ini.</h2>
         </div>
       
     </header>
     <main>
         <div>
-            <input type="text" name="Name" class="question" id="name" required autocomplete="off" />
-            <label for="name"><span>Tuliskan Nama Kamu?</span></label>
-            <input type="submit" id="submitBtn" value="Get Certificate"/>
+            <form id="dataForm">
+                <input type="text" name="Name" class="question" id="nameInput" required autocomplete="off" />
+                <label for="nameInput"><span>Tuliskan Nama Kamu?</span></label>
+                <input type="submit" id="submitBtn" value="Get Certificate"/>
+            </form>
         </div>
     </main>
     <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>

@@ -1,7 +1,7 @@
 
 
 console.log("hello")
-const userName = document.getElementById("name");
+const userName = document.getElementById("nameInput");
 const submitBtn = document.getElementById("submitBtn");
 const { PDFDocument, rgb, degrees } = PDFLib;
 
@@ -48,4 +48,30 @@ const generatePDF = async (name) => {
   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
   saveAs(pdfDataUri,"newcertificate.pdf")
 };
+
+const dataForm = document.getElementById("dataForm");
+
+        dataForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("nameInput").value;
+
+            fetch("save.php", {
+                method: "POST",
+                body: JSON.stringify({ name }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert("Name saved successfully.");
+                    } else {
+                        alert("Failed to save name.");
+                    }
+                })
+                .catch((error) => {
+                    alert("Error: " + error);
+                });
+        });
+
 
