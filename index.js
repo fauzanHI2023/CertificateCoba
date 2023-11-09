@@ -49,34 +49,4 @@ const generatePDF = async (name) => {
   saveAs(pdfDataUri,"newcertificate.pdf")
 };
 
-        const dataForm = document.getElementById("dataForm");
-        const nameInput = document.getElementById("nameInput");   
-        const dataTable = document.getElementById("dataTable");
-        let data = JSON.parse(localStorage.getItem("savedData")) || [];
-
-        data.forEach(item => appendToTable(item.name));
-
-        dataForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const name = nameInput.value.trim();
-
-            if (name !== "") {
-                data.push({ name });
-                appendToTable(name);
-                nameInput.value = "";
-                saveDataToLocalStorage();
-            }
-        });
-
-        function appendToTable(name) {
-            const tableBody = dataTable.querySelector("tbody");
-            const row = document.createElement("tr");
-            row.innerHTML = `<td>${name}</td>`;
-            tableBody.appendChild(row);
-        }
-
-        function saveDataToLocalStorage() {
-            localStorage.setItem("savedData", JSON.stringify(data));
-        }
-
 
