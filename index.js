@@ -1,7 +1,7 @@
 
 
 console.log("hello")
-const userName = document.getElementById("nameInput");
+const userName = document.getElementById("name");
 const submitBtn = document.getElementById("submitBtn");
 const { PDFDocument, rgb, degrees } = PDFLib;
 
@@ -39,7 +39,7 @@ const generatePDF = async (name) => {
    firstPage.drawText(name, {
      x: 300,
      y: 270,
-     size: 40,
+     size: 44,
      font: SanChezFont ,
      color: rgb(0.2, 0.84, 0.67),
    });
@@ -48,5 +48,4 @@ const generatePDF = async (name) => {
   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
   saveAs(pdfDataUri,"newcertificate.pdf")
 };
-
 
