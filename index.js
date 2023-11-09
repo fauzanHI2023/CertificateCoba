@@ -1,5 +1,3 @@
-
-
 console.log("hello")
 const userName = document.getElementById("nameInput");
 const submitBtn = document.getElementById("submitBtn");
@@ -16,7 +14,7 @@ submitBtn.addEventListener("click", () => {
       }
 });
 const generatePDF = async (name) => {
-    const existingPdfBytes = await fetch("Certificate.pdf").then((res) =>
+    const existingPdfBytes = await fetch("https://human-initiative.org/wp-content/uploads/2023/11/Certificate.pdf").then((res) =>
       res.arrayBuffer()
     );
 
@@ -46,5 +44,5 @@ const generatePDF = async (name) => {
  
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
-  saveAs(pdfDataUri,"newcertificate.pdf")
+  saveAs(pdfDataUri,"Human_Initiative_Tanam_Pohon.pdf")
 };
