@@ -44,5 +44,5 @@ const generatePDF = async (name) => {
  
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
-  saveAs(pdfDataUri,"Human_Initiative_Tanam_Pohon.pdf")
+  saveAs(pdfDataUri,"newcertificate.pdf")
 };
