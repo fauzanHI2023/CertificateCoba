@@ -14,7 +14,7 @@ submitBtn.addEventListener("click", () => {
       }
 });
 const generatePDF = async (name) => {
-    const existingPdfBytes = await fetch("https://human-initiative.org/wp-content/uploads/2023/11/Certificate.pdf").then((res) =>
+    const existingPdfBytes = await fetch("Certificate.pdf").then((res) =>
       res.arrayBuffer()
     );
 
